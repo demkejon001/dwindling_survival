@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class InteractableObject : MonoBehaviour
 {
-    public string typeOfInteractable, interactableInfo;
+    public string typeOfInteractable, interactableInfo, actionToDo;
 
     // Start is called before the first frame update
     void Start()
