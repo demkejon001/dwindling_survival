@@ -23,7 +23,7 @@ public class Fire : MonoBehaviour
             AdjustMainModule();
             isLit = true;
         }
-        if (activityLevel < 0) 
+        else
         {
             isLit = false;
             activityLevel = 0;
