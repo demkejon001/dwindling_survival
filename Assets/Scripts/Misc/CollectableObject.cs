@@ -16,21 +16,4 @@ public class CollectableObject : MonoBehaviour
     public ItemID id;
 
     public TextMeshProUGUI objectCountNum;
-
-    private void Start()
-    {
-        hasAmount = 0;
-        objectCountNum.text = hasAmount.ToString();
-    }
-
-    
-
-    
-
-    public void Collect()
-    {
-        hasAmount++;
-        objectCountNum.text = hasAmount.ToString();
-        Destroy(gameObject);
-    }
 }
