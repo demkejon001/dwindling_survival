@@ -393,6 +393,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &125330474
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374856208563933522, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498182840930008650, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498182840930008650, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905267356086985123, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
+      propertyPath: m_Name
+      value: Snow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5525890d64c8f73498921372cf95fac6, type: 3}
 --- !u!1 &129825865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 232781252}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &546083779
 MonoBehaviour:
@@ -1187,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cfd2c4efca8586d83b592752497400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 232781253}
+  fire: {fileID: 0}
 --- !u!58 &546083780
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3540,7 +3605,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -9, y: -5, z: 0}
-  m_Size: {x: 18, y: 10, z: 1}
+  m_Size: {x: 22, y: 10, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -3668,7 +3733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1132576755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,8 +4378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodValue: {fileID: 1586081572}
   berryValue: {fileID: 1316003893}
-  rockValue: {fileID: 1438046249}
-  waterValue: {fileID: 1658181380}
+  rockValue: {fileID: 1658181380}
+  waterValue: {fileID: 1438046249}
   player: {fileID: 1380355988}
 --- !u!1 &1438046247
 GameObject:
@@ -10555,3 +10620,5 @@ SceneRoots:
   - {fileID: 1029144983}
   - {fileID: 1933728190}
   - {fileID: 1190429339}
+  - {fileID: 546083778}
+  - {fileID: 125330474}
