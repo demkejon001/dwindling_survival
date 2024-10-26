@@ -174,3 +174,6 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   speed: 20
   enemyRB: {fileID: 6362094041752767451}
+  MAX_SEE_AHEAD: 10
+  windUpDistance: 1
+  launchDistance: 10
