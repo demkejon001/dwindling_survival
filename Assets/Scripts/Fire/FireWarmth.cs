@@ -7,6 +7,7 @@ using UnityEngine.Analytics;
 public class FireWarmth : MonoBehaviour
 {
     public Fire fire;
+   
 
     void OnTriggerStay2D(Collider2D collision)
     {
