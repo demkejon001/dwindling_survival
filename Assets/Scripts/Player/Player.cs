@@ -8,9 +8,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    public bool isInFireRadius = false;
     public float maxWarmth = 100.0f;
     public float warmth = 100.0f;
-    public float warmthIncrement = 1.0f;
+    public float warmthIncrementRate = 1.0f;
+    public float warmthDecrementRate = 1.0f;
     public static int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
     public TextMeshProUGUI num;
     private void Start()
@@ -19,7 +21,6 @@ public class Player : MonoBehaviour
     }
     public void WarmUp()
     {
-        warmth = math.clamp(warmth + warmthIncrement, 0, maxWarmth);
     }
 
     public void AddObject(CollectableObject objectToAdd)
@@ -28,5 +29,17 @@ public class Player : MonoBehaviour
         inventory[index] += 1;
         num.text = inventory[index].ToString();
         
+    }
+
+    void Update()
+    {
+        if (isInFireRadius)
+        {
+            warmth = Mathf.Min(warmth + Time.deltaTime * warmthIncrementRate, maxWarmth);
+        }
+        else
+        {
+            warmth = Mathf.Max(warmth - Time.deltaTime * warmthDecrementRate, 0);
+        }
     }
 }
