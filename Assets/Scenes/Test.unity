@@ -4191,7 +4191,7 @@ MonoBehaviour:
   description: {fileID: 129825867}
   info: {fileID: 599123816}
   action: {fileID: 586125719}
-  player: {fileID: 0}
+  player: {fileID: 1380355988}
 --- !u!114 &1380355988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4210,7 +4210,6 @@ MonoBehaviour:
   warmthIncrementRate: 1
   warmthDecrementRate: 1
   inventory: 00000000000000000000000000000000
-  num: {fileID: 0}
 --- !u!1 &1386755939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,7 +4258,7 @@ MonoBehaviour:
   berryValue: {fileID: 1316003893}
   rockValue: {fileID: 1438046249}
   waterValue: {fileID: 1658181380}
-  player: {fileID: 0}
+  player: {fileID: 1380355988}
 --- !u!1 &1438046247
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,7 +10408,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

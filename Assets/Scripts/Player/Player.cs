@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public float warmthIncrementRate = 1.0f;
     public float warmthDecrementRate = 1.0f;
     public int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
-    public TextMeshProUGUI num;
+
     private void Start()
     {
         Array.Fill(inventory, 0);
@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
     {
         int index = (int)objectToAdd.id;
         inventory[index] += 1;
-        num.text = inventory[index].ToString();
-        
+        GameManager.Instance.UpdateInventoryUI(index);
     }
 
     void Update()
