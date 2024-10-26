@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float warmth = 100.0f;
     public float warmthIncrementRate = 1.0f;
     public float warmthDecrementRate = 1.0f;
+    public float health = 100.0f;
     public int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
 
     private void Start()
@@ -38,6 +39,11 @@ public class Player : MonoBehaviour
             inventory[index] -= 1;
             GameManager.Instance.UpdateInventoryUI(id);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health = Math.Max(0, health - damage);
     }
 
     void Update()
