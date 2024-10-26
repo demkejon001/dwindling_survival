@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 38869695}
   - component: {fileID: 38869694}
   m_Layer: 5
-  m_Name: Wood (2)
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,6 +303,37 @@ Transform:
   m_Children:
   - {fileID: 1569742698}
   - {fileID: 978897949}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &79011418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 79011419}
+  m_Layer: 0
+  m_Name: ------------CAMERAS------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &79011419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79011418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67753565, y: 0.8763245, z: -0.036996778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129825865
@@ -666,7 +697,7 @@ GameObject:
   - component: {fileID: 279206608}
   - component: {fileID: 279206607}
   m_Layer: 5
-  m_Name: Wood (1)
+  m_Name: Berries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,7 +1296,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7869089532594746481, guid: 61e47687d790fae4caa24f3b0b6727fa, type: 3}
   m_PrefabInstance: {fileID: 7104375641299804673}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &823398478
+=======
+--- !u!1 &791447725
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1273,22 +1308,33 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 823398479}
   - component: {fileID: 823398481}
   - component: {fileID: 823398480}
   m_Layer: 0
   m_Name: FireWarmth
+=======
+  - component: {fileID: 791447726}
+  m_Layer: 0
+  m_Name: ----------ENVIRONMENT--------------
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &823398479
+=======
+--- !u!4 &791447726
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 823398478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1345,6 +1391,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cfd2c4efca8586d83b592752497400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_GameObject: {fileID: 791447725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67753565, y: 0.8763245, z: -0.036996778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &877952116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3788,6 +3845,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316003891}
   m_CullTransparentMesh: 1
+--- !u!1 &1362722612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362722613}
+  m_Layer: 0
+  m_Name: ---------GAME MANAGERS----------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1362722613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362722612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67753565, y: 0.8763245, z: -0.036996778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380355980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386755940}
+  - component: {fileID: 1386755941}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4054,6 +4143,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386755941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386755939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d033e240c7d7ce8438f43811c2231e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodValue: {fileID: 1586081572}
+  berryValue: {fileID: 1316003893}
+  rockValue: {fileID: 1438046249}
+  waterValue: {fileID: 1658181380}
 --- !u!1 &1438046247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4337,7 +4442,7 @@ GameObject:
   - component: {fileID: 1535156572}
   - component: {fileID: 1535156571}
   m_Layer: 5
-  m_Name: Wood (3)
+  m_Name: Rocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10378,14 +10483,17 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1362722613}
+  - {fileID: 1386755940}
+  - {fileID: 1132576758}
+  - {fileID: 2004515582}
+  - {fileID: 79011419}
   - {fileID: 1451475483}
+  - {fileID: 791447726}
   - {fileID: 78948394}
   - {fileID: 2024695504}
   - {fileID: 1380355984}
   - {fileID: 1555583616}
   - {fileID: 1029144983}
   - {fileID: 1933728190}
-  - {fileID: 1132576758}
-  - {fileID: 2004515582}
   - {fileID: 2040316910}
-  - {fileID: 1386755940}
