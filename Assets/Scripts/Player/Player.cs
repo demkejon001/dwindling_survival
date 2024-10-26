@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public float warmth = 100.0f;
     public float warmthIncrementRate = 1.0f;
     public float warmthDecrementRate = 1.0f;
-    public static int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
+    public int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
     public TextMeshProUGUI num;
     private void Start()
     {

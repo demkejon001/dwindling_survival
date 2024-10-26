@@ -7,6 +7,7 @@ public class Fire : MonoBehaviour
     public float activityLevel = 1.63f;
     public ParticleSystem thisFire;
     public float decrementRate = 0.1f;
+    public bool isLit = true;
 
     private void Start()
     {
@@ -16,8 +17,18 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activityLevel -= Time.deltaTime * decrementRate;
-        AdjustMainModule();
+        if (activityLevel > 0)
+        {
+            activityLevel -= Time.deltaTime * decrementRate;
+            AdjustMainModule();
+            isLit = true;
+        }
+        if (activityLevel < 0) 
+        {
+            isLit = false;
+            activityLevel = 0;
+        }
+
     }
 
     void AdjustMainModule()
