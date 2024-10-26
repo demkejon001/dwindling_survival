@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  speed: 20
+  speed: 10
   enemyRB: {fileID: 6362094041752767451}
   enemyCollider: {fileID: 0}
   MAX_SEE_AHEAD: 10
@@ -180,5 +180,7 @@ MonoBehaviour:
   launchDistance: 3
   windUpDuration: 0.5
   launchDuration: 0.2
-  attack_cooldown: 0.6
+  attack_cooldown: 0.3
   attackDamage: 10
+  maxEvadeDistance: 30
+  evadeDuration: 8
