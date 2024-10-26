@@ -26,24 +26,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UpdateInventoryUI(int inventoryIndex)
+    public void UpdateInventoryUI(ItemID id)
     {
-        switch (inventoryIndex)
+        int inventoryIndex = (int) id;
+        switch (id)
         {
-            case 0:
+            case ItemID.Berry:
                 berryValue.text = player.inventory[inventoryIndex].ToString(); 
                 break;
-            case 1:
+            case ItemID.Wood:
                 woodValue.text = player.inventory[inventoryIndex].ToString();
                 break;
-            case 2:
+            case ItemID.Water:
                 waterValue.text = player.inventory[inventoryIndex].ToString();
                 break;
-            case 3:
+            case ItemID.Rock:
                 rockValue.text = player.inventory[inventoryIndex].ToString();
                 break;
         }
     }
+    // public void UpdateInventoryUI(int inventoryIndex)
+    // {
+    //     switch (inventoryIndex)
+    //     {
+    //         case 0:
+    //             berryValue.text = player.inventory[inventoryIndex].ToString(); 
+    //             break;
+    //         case 1:
+    //             woodValue.text = player.inventory[inventoryIndex].ToString();
+    //             break;
+    //         case 2:
+    //             waterValue.text = player.inventory[inventoryIndex].ToString();
+    //             break;
+    //         case 3:
+    //             rockValue.text = player.inventory[inventoryIndex].ToString();
+    //             break;
+    //     }
+    // }
 
 
     

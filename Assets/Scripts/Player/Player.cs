@@ -27,7 +27,17 @@ public class Player : MonoBehaviour
     {
         int index = (int)objectToAdd.id;
         inventory[index] += 1;
-        GameManager.Instance.UpdateInventoryUI(index);
+        GameManager.Instance.UpdateInventoryUI(objectToAdd.id);
+    }
+
+    public void RemoveObjectFromInventory(ItemID id)
+    {
+        int index = (int) id;
+        if (inventory[index] > 0)
+        {
+            inventory[index] -= 1;
+            GameManager.Instance.UpdateInventoryUI(id);
+        }
     }
 
     void Update()

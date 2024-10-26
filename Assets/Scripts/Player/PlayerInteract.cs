@@ -10,6 +10,8 @@ public class PlayerInteract : MonoBehaviour
     public TextMeshProUGUI description, info, action;
     public Player player;
     public Dictionary<int, CollectableObject> collectables = new Dictionary<int, CollectableObject>();
+    public bool nextToSOS;
+    private SOS sosSign;
 
     void Start()
     {
@@ -20,7 +22,16 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && collectables.Count > 0)
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
+        
+    }
+
+    private void Interact()
+    {
+        if (collectables.Count > 0)
         {
             List<int> remove_keys = new List<int>();
             foreach (KeyValuePair<int, CollectableObject> kvp in collectables)
@@ -46,13 +57,23 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
-        
+
+        if (nextToSOS)
+        {
+            if (player.inventory[(int) ItemID.Rock] > 0)
+            {
+                sosSign.AddRock();
+                player.RemoveObjectFromInventory(ItemID.Rock);
+            }
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         InteractableObject objectDetected = collision.gameObject.GetComponent<InteractableObject>();
         CollectableObject collectableDetected = collision.gameObject.GetComponent<CollectableObject>();
+        SOS sos = collision.gameObject.GetComponent<SOS>();
 
         if (objectDetected != null)
         {
@@ -65,6 +86,11 @@ public class PlayerInteract : MonoBehaviour
             int hash_code = collectableDetected.gameObject.GetHashCode();
             collectables[hash_code] = collectableDetected;
         }
+        if (sos != null)
+        {
+            nextToSOS = true;
+            sosSign = sos;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -74,6 +100,7 @@ public class PlayerInteract : MonoBehaviour
         action.text = "";
 
         CollectableObject collectableDetected = collision.gameObject.GetComponent<CollectableObject>();
+        SOS sos = collision.gameObject.GetComponent<SOS>();
 
         if (collectableDetected != null) 
         {
@@ -82,6 +109,11 @@ public class PlayerInteract : MonoBehaviour
             {
                 collectables.Remove(hash_code);
             }
+        }
+        if (sos != null)
+        {
+            nextToSOS = false;
+            sosSign = null;
         }
     }
 
