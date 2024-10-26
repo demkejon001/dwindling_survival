@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cfd2c4efca8586d83b592752497400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire: {fileID: 232781253}
 --- !u!58 &546083780
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4022,7 +4023,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &1380355982

@@ -6,20 +6,20 @@ using UnityEngine.Analytics;
 
 public class FireWarmth : MonoBehaviour
 {
-    private Fire fire;
-    void Start()
+    public Fire fire;
+
+    void OnTriggerStay2D(Collider2D collision)
     {
-        fire = GetComponentInParent<Fire>();
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (fire.isLit)
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
+            Player player = collision.GetComponent<Player>();
+            if (fire.isLit)
             {
-                Player player = collision.GetComponent<Player>();
                 player.isInFireRadius = true;
+            }
+            else
+            {
+                player.isInFireRadius = false;
             }
         }
     }
