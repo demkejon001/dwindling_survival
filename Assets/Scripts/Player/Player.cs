@@ -83,6 +83,10 @@ public class Player : MonoBehaviour
         {
             hungerBar.SetStatus(hunger / maxHunger);
         }
+        if (hunger <= 0 || warmth <= 0 || health <= 0)
+        {
+            DeathOfPlayer();
+        }
 
     }
 }
