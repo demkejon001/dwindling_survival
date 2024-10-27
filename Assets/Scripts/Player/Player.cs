@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
             warmth = Mathf.Max(warmth - Time.deltaTime * warmthDecrementRate, 0);
         }
 
-        hunger -= hungerDecrementRate;
+        hunger -= hungerDecrementRate * Time.deltaTime;
 
         if (warmthBar != null)
         {
