@@ -75,3 +75,6 @@ TagManager:
   - name: Collision
     uniqueID: 2427914705
     locked: 0
+  - name: FX
+    uniqueID: 2080677509
+    locked: 0
