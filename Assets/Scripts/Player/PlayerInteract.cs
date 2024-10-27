@@ -41,7 +41,14 @@ public class PlayerInteract : MonoBehaviour
             {
                 if (kvp.Value != null)
                 {
-                    player.AddObject(kvp.Value);
+                    if (kvp.Value.id == ItemID.Berry)
+                    {
+                        player.Eat(10.0f);
+                    }
+                    else
+                    {
+                        player.AddObject(kvp.Value);
+                    }
                     remove_keys.Add(kvp.Key);
                 }
                 else
