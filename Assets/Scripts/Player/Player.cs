@@ -14,7 +14,12 @@ public class Player : MonoBehaviour
     public float warmthIncrementRate = 1.0f;
     public float warmthDecrementRate = 1.0f;
     public float health = 100.0f;
+    public float maxHealth = 100.0f;
     public int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
+
+    public StatusBar warmthBar;
+    public StatusBar hungerBar;
+
 
     private void Start()
     {
@@ -56,5 +61,15 @@ public class Player : MonoBehaviour
         {
             warmth = Mathf.Max(warmth - Time.deltaTime * warmthDecrementRate, 0);
         }
+
+        if (warmthBar != null)
+        {
+            warmthBar.SetStatus(warmth / maxWarmth);
+        }
+        if (hungerBar != null)
+        {
+            hungerBar.SetStatus(health / maxHealth);
+        }
+
     }
 }

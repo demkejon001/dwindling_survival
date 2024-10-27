@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public float activityLevel = 1.63f;
+    public float activityLevel = 1.0f;
     public ParticleSystem thisFire;
-    public float decrementRate = 0.1f;
+    public float decrementRate = 0.02f;
     public bool isLit = true;
+    public float maxActivityLevel = 1.0f;
+    public float firewoodIncrementValue = .15f;
 
     private void Start()
     {
@@ -35,5 +37,15 @@ public class Fire : MonoBehaviour
     {
         var main = thisFire.main;
         main.startSize = activityLevel;
+    }
+
+    public bool addFirewood()
+    {
+        if (activityLevel + firewoodIncrementValue < maxActivityLevel)
+        {
+            activityLevel += firewoodIncrementValue;
+            return true;
+        }
+        return false;
     }
 }

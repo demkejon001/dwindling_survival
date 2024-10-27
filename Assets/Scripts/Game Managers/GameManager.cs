@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI berryValue;
     [SerializeField]
     private TextMeshProUGUI rockValue;
-    [SerializeField]
-    private TextMeshProUGUI waterValue;
+    // [SerializeField]
+    // private TextMeshProUGUI waterValue;
     [SerializeField]
     private Player player;
 
@@ -32,16 +32,16 @@ public class GameManager : MonoBehaviour
         switch (id)
         {
             case ItemID.Berry:
-                berryValue.text = player.inventory[inventoryIndex].ToString(); 
+                berryValue.text = player.inventory[inventoryIndex].ToString() + " Food"; 
                 break;
             case ItemID.Wood:
-                woodValue.text = player.inventory[inventoryIndex].ToString();
+                woodValue.text = player.inventory[inventoryIndex].ToString() + " Wood";
                 break;
-            case ItemID.Water:
-                waterValue.text = player.inventory[inventoryIndex].ToString();
-                break;
+            // case ItemID.Water:
+            //     waterValue.text = player.inventory[inventoryIndex].ToString();
+            //     break;
             case ItemID.Rock:
-                rockValue.text = player.inventory[inventoryIndex].ToString();
+                rockValue.text = player.inventory[inventoryIndex].ToString() + " Rock";
                 break;
         }
     }
