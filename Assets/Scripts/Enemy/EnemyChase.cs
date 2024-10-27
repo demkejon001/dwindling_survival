@@ -9,7 +9,7 @@ public class EnemyChase : MonoBehaviour
 {
     public Transform playerTransform;
     public float speed = 10f;
-    [SerializeField] 
+    [SerializeField]
     private Rigidbody2D enemyRB;
     [SerializeField]
     private Collider2D enemyCollider;
@@ -140,7 +140,7 @@ public class EnemyChase : MonoBehaviour
         {
             enemyRB.position = Vector2.Lerp(startPosition, windUpPosition, elapsedTime / windUpDuration);
             elapsedTime += Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
 
         // Debug.Log("Attac" + enemyRB.position + " " + launchPosition);
@@ -151,7 +151,7 @@ public class EnemyChase : MonoBehaviour
         {
             enemyRB.position = Vector2.Lerp(windUpPosition, launchPosition, elapsedTime / launchDuration);
             elapsedTime += Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
         canDamage = false;
 
@@ -160,7 +160,7 @@ public class EnemyChase : MonoBehaviour
         while (elapsedTime < attack_cooldown)
         {
             elapsedTime += Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
 
         enemyState = EnemyState.Evade;
@@ -184,53 +184,5 @@ public class EnemyChase : MonoBehaviour
         }
         enemyState = EnemyState.None;
     }
-
-    // private bool AreFloatsClose(float a, float b, float tolerance = .0001f)
-    // {
-    //     return Mathf.Abs(a - b) < tolerance;
-    // }
-
-    // IEnumerator Stalk()
-    // {
-
-    //     while (true)
-    //     {
-    //         angle = angle + (6.284f * Time.deltaTime / rotationRate);
-    //         if (angle > 6.284f)
-    //         {
-    //             angle = 0f;
-    //         }
-
-    //         // if (Mathf.Approximately(currentXRadius, xRadius))
-    //         if (AreFloatsClose(currentXRadius, xRadius, radiusChangeSpeed))
-    //         {
-    //             xRadius = UnityEngine.Random.Range(minRadius, maxRadius);
-    //         }
-    //         else
-    //         {
-    //             currentXRadius += Mathf.Sign(xRadius - currentXRadius) * radiusChangeSpeed;
-    //         }
-    //         if (AreFloatsClose(currentYRadius, yRadius, radiusChangeSpeed))
-    //         {
-    //             yRadius = UnityEngine.Random.Range(minRadius, maxRadius);
-    //         }
-    //         else
-    //         {
-    //             currentYRadius += Mathf.Sign(yRadius - currentYRadius) * radiusChangeSpeed;
-    //         }
-
-    //         Vector3 offset = new Vector3(Mathf.Cos(angle) * currentXRadius, Mathf.Sin(angle) * currentYRadius, 0);
-
-    //         // Update the position of the rotating object
-    //         Debug.DrawLine(enemyRB.position, playerTransform.position + offset, Color.red, .1f);
-    //         Debug.DrawLine(playerTransform.position, playerTransform.position + offset, Color.green, .1f);
-    //         // enemyRB.position = Vector2.MoveTowards(enemyRB.position, playerenemyRB.position + offset, Time.deltaTime * speed);
-    //         enemyRB.position = Vector2.MoveTowards(enemyRB.position, playerTransform.position + offset, Time.deltaTime * speed);
-    //         // enemyRB.position += (playerTransform.position + offset - enemyRB.position).normalized * Time.deltaTime * speed;
-    //         yield return null;
-    //     }
-        
-    // }
-
 
 }
