@@ -42,9 +42,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemy
-    uniqueID: 1811634779
+  - name: Background
+    uniqueID: 2115440899
+    locked: 0
+  - name: Wall
+    uniqueID: 3807992789
+    locked: 0
+  - name: Shadow
+    uniqueID: 3005988159
+    locked: 0
+  - name: Ground
+    uniqueID: 1690080951
+    locked: 0
+  - name: Ground2
+    uniqueID: 1358802133
     locked: 0
   - name: Player
     uniqueID: 3835466599
+    locked: 0
+  - name: Enemy
+    uniqueID: 1811634779
+    locked: 0
+  - name: Deco
+    uniqueID: 1403338857
+    locked: 0
+  - name: Foreground
+    uniqueID: 580499949
+    locked: 0
+  - name: ForegroundDeco
+    uniqueID: 195100187
+    locked: 0
+  - name: Collision
+    uniqueID: 2427914705
     locked: 0

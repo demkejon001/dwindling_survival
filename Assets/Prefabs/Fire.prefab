@@ -4936,5 +4936,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityLevel: 1.63
   thisFire: {fileID: 2515489676369492076}
-  decrementRate: 0.01
+  decrementRate: 0.1
   isLit: 1

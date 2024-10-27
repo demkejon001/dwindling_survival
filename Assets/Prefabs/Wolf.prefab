@@ -177,6 +177,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 0}
   MAX_SEE_AHEAD: 10
   windUpDistance: 0.5
+<<<<<<< Updated upstream
   launchDistance: 3
   windUpDuration: 0.5
   launchDuration: 0.2
@@ -184,3 +185,6 @@ MonoBehaviour:
   attackDamage: 10
   maxEvadeDistance: 30
   evadeDuration: 8
+=======
+  launchDistance: 2
+>>>>>>> Stashed changes
