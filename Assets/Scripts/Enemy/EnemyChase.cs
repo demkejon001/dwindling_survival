@@ -68,6 +68,7 @@ public class EnemyChase : MonoBehaviour
         None,
     }
 
+    [SerializeField]
     private EnemyState enemyState;
 
 
