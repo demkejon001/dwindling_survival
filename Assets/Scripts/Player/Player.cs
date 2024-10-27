@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
             inventory[index] -= 1;
             GameManager.Instance.UpdateInventoryUI(id);
         }
+    }
+
+    public void DeathOfPlayer()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void TakeDamage(float damage)
