@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     public void Eat(float value)
     {
-        hunger += Mathf.Min(value + hunger, maxHunger);
+        hunger = Mathf.Min(value + hunger, maxHunger);
     }
 
     void Update()
