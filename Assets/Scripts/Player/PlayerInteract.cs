@@ -9,18 +9,14 @@ public class PlayerInteract : MonoBehaviour
 {
     // public TextMeshProUGUI description, info, action;
     public Player player;
-    public Dictionary<int, CollectableObject> collectables = new Dictionary<int, CollectableObject>();
-    public Dictionary<int, InteractableObject> interacables = new Dictionary<int, InteractableObject>();
-    public bool nextToSOS;
-    private SOS sosSign;
-    public bool nextToFire;
-    private Fire fire;
+    public float interactionRadius = 1.0f;
 
     void Start()
     {
-        // description.text = "";
-        // info.text = "";
-        // action.text = "";
+        if (player == null)
+        {
+            player = GetComponentInParent<Player>();
+        }
     }
 
     void Update()
@@ -34,119 +30,44 @@ public class PlayerInteract : MonoBehaviour
 
     private void Interact()
     {
-        if (collectables.Count > 0)
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(player.transform.position, interactionRadius);
+        foreach (Collider2D collider in colliders)
         {
-            List<int> remove_keys = new List<int>();
-            foreach (KeyValuePair<int, CollectableObject> kvp in collectables)
+            CollectableObject collectableObject = collider.GetComponent<CollectableObject>();
+            Fire fire = collider.GetComponentInParent<Fire>();
+            SOS sos = collider.GetComponent<SOS>();
+
+            if (collectableObject != null)
             {
-                if (kvp.Value != null)
+                if (collectableObject.id == ItemID.Berry)
                 {
-                    if (kvp.Value.id == ItemID.Berry)
-                    {
-                        player.Eat(10.0f);
-                    }
-                    else
-                    {
-                        player.AddObject(kvp.Value);
-                    }
-                    remove_keys.Add(kvp.Key);
+                    player.Eat(10.0f);
                 }
                 else
                 {
-                    remove_keys.Add(kvp.Key);
+                    player.AddObject(collectableObject);
                 }
+                Destroy(collectableObject.gameObject);
             }
-
-            foreach (int key in remove_keys)
+            if (fire != null)
             {
-                CollectableObject collectableObject = collectables[key];
-                collectables.Remove(key);
-                if (collectableObject != null)
+                if (player.inventory[(int) ItemID.Wood] > 0)
                 {
-                    Destroy(collectableObject.gameObject);
+                    bool addedFirewood = fire.addFirewood();
+                    if (addedFirewood)
+                    {
+                        player.RemoveObjectFromInventory(ItemID.Wood);
+                    }
                 }
             }
-        }
-
-        if (nextToSOS)
-        {
-            if (player.inventory[(int) ItemID.Rock] > 0)
+            if (sos != null)
             {
-                sosSign.AddRock();
-                player.RemoveObjectFromInventory(ItemID.Rock);
-            }
-        }
-        if (nextToFire)
-        {
-            if (player.inventory[(int) ItemID.Wood] > 0)
-            {
-                bool addedFirewood = fire.addFirewood();
-                if (addedFirewood)
+                if (player.inventory[(int) ItemID.Rock] > 0)
                 {
-                    player.RemoveObjectFromInventory(ItemID.Wood);
+                    sos.AddRock();
+                    player.RemoveObjectFromInventory(ItemID.Rock);
                 }
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // InteractableObject objectDetected = collision.gameObject.GetComponent<InteractableObject>();
-        CollectableObject collectableDetected = collision.gameObject.GetComponent<CollectableObject>();
-        SOS sos = collision.gameObject.GetComponent<SOS>();
-        Fire fire_ = collision.gameObject.GetComponentInParent<Fire>();
-
-        // if (objectDetected != null)
-        // {
-        //     description.text = objectDetected.typeOfInteractable;
-        //     info.text = objectDetected.interactableInfo;
-        //     action.text = objectDetected.actionToDo;
-        // }
-        if (collectableDetected != null) 
-        {
-            int hash_code = collectableDetected.gameObject.GetHashCode();
-            collectables[hash_code] = collectableDetected;
-        }
-        if (sos != null)
-        {
-            nextToSOS = true;
-            sosSign = sos;
-        }
-        if (fire_ != null)
-        {
-            nextToFire = true;
-            fire = fire_;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // description.text = "";
-        // info.text = "";
-        // action.text = "";
-
-        CollectableObject collectableDetected = collision.gameObject.GetComponent<CollectableObject>();
-        SOS sos = collision.gameObject.GetComponent<SOS>();
-        Fire fire_ = collision.gameObject.GetComponentInParent<Fire>();
-
-        if (collectableDetected != null) 
-        {
-            int hash_code = collectableDetected.gameObject.GetHashCode();
-            if (collectables.ContainsKey(hash_code))
-            {
-                collectables.Remove(hash_code);
-            }
-        }
-        if (sos != null)
-        {
-            nextToSOS = false;
-            sosSign = null;
-        }
-        if (fire_ != null)
-        {
-            nextToFire = false;
-            fire = null;
-        }
-    }
-
 }
