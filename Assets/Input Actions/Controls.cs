@@ -196,11 +196,169 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""493c8c76-add9-41b4-bbbc-47193a599166"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
                     ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Flashlight"",
+            ""id"": ""05cd1ad2-7d65-4dc3-a2c5-4ba3999cfa3b"",
+            ""actions"": [
+                {
+                    ""name"": ""PivotRight"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""218696b1-d619-4fd5-a205-708f0406fe29"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PivotLeft"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""58dbd7ea-898f-41ee-8a96-aa19b62cdbba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e359f96c-eae2-4196-a689-6a3deeca27af"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8f83f8f-da04-4c05-bdca-94de42dc2048"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""210b04a9-290a-4035-b6b8-6b990a7de9bb"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebd01e34-061a-45c5-8bda-17cebed2db4e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7df77572-8509-4539-a34f-ca5bfbf53de7"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d43d4738-da8d-4510-b2e9-5ef89ea68429"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e5a2c67-bf92-485b-9049-a75d84535cc7"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""PivotLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6dfcf186-c9f7-4a82-baf1-657146ecc59b"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46700db0-9d2f-45f3-93a0-5bc4ccf330b4"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc2a0761-cce5-4ebd-a86c-8991b20837bd"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""PivotLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8cfc556-f0ce-406a-b2aa-caf2cfe568f7"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c9e70c3-2531-41ad-a6e5-cb67025c21c6"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PivotLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -230,6 +388,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Shooting
         m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
         m_Shooting_Shoot = m_Shooting.FindAction("Shoot", throwIfNotFound: true);
+        // Flashlight
+        m_Flashlight = asset.FindActionMap("Flashlight", throwIfNotFound: true);
+        m_Flashlight_PivotRight = m_Flashlight.FindAction("PivotRight", throwIfNotFound: true);
+        m_Flashlight_PivotLeft = m_Flashlight.FindAction("PivotLeft", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -237,6 +399,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, Controls.Movement.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Interact.enabled, "This will cause a leak and performance issues, Controls.Interact.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Shooting.enabled, "This will cause a leak and performance issues, Controls.Shooting.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Flashlight.enabled, "This will cause a leak and performance issues, Controls.Flashlight.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -432,6 +595,60 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public ShootingActions @Shooting => new ShootingActions(this);
+
+    // Flashlight
+    private readonly InputActionMap m_Flashlight;
+    private List<IFlashlightActions> m_FlashlightActionsCallbackInterfaces = new List<IFlashlightActions>();
+    private readonly InputAction m_Flashlight_PivotRight;
+    private readonly InputAction m_Flashlight_PivotLeft;
+    public struct FlashlightActions
+    {
+        private @Controls m_Wrapper;
+        public FlashlightActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PivotRight => m_Wrapper.m_Flashlight_PivotRight;
+        public InputAction @PivotLeft => m_Wrapper.m_Flashlight_PivotLeft;
+        public InputActionMap Get() { return m_Wrapper.m_Flashlight; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FlashlightActions set) { return set.Get(); }
+        public void AddCallbacks(IFlashlightActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FlashlightActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FlashlightActionsCallbackInterfaces.Add(instance);
+            @PivotRight.started += instance.OnPivotRight;
+            @PivotRight.performed += instance.OnPivotRight;
+            @PivotRight.canceled += instance.OnPivotRight;
+            @PivotLeft.started += instance.OnPivotLeft;
+            @PivotLeft.performed += instance.OnPivotLeft;
+            @PivotLeft.canceled += instance.OnPivotLeft;
+        }
+
+        private void UnregisterCallbacks(IFlashlightActions instance)
+        {
+            @PivotRight.started -= instance.OnPivotRight;
+            @PivotRight.performed -= instance.OnPivotRight;
+            @PivotRight.canceled -= instance.OnPivotRight;
+            @PivotLeft.started -= instance.OnPivotLeft;
+            @PivotLeft.performed -= instance.OnPivotLeft;
+            @PivotLeft.canceled -= instance.OnPivotLeft;
+        }
+
+        public void RemoveCallbacks(IFlashlightActions instance)
+        {
+            if (m_Wrapper.m_FlashlightActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFlashlightActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FlashlightActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FlashlightActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FlashlightActions @Flashlight => new FlashlightActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -452,5 +669,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IShootingActions
     {
         void OnShoot(InputAction.CallbackContext context);
+    }
+    public interface IFlashlightActions
+    {
+        void OnPivotRight(InputAction.CallbackContext context);
+        void OnPivotLeft(InputAction.CallbackContext context);
     }
 }
