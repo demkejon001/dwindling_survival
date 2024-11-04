@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool isInFireRadius = false;
     public float maxWarmth = 100.0f;
     public float warmth = 100.0f;
+    public float warmthRateValue;
     public float warmthIncrementRate = 1.0f;
     public float warmthDecrementRate = 1.0f;
     public float health = 100.0f;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     public float maxHunger = 100.0f;
     public float hungerDecrementRate = .5f;
     public int[] inventory = new int[Enum.GetValues(typeof(ItemID)).Length];
+    private GameManager gameManager;
 
     public StatusBar warmthBar;
     public StatusBar hungerBar;
@@ -28,6 +30,10 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Array.Fill(inventory, 0);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); 
+        
+        
+
     }
 
     public void AddObject(CollectableObject objectToAdd)
@@ -70,7 +76,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            warmth = Mathf.Max(warmth - Time.deltaTime * warmthDecrementRate, 0);
+            //Debug.Log(Time.deltaTime * warmthDecrementRate * gameManager.GameCycle());
+            warmth = Mathf.Max(warmth - Time.deltaTime * warmthDecrementRate * (1-gameManager.GameCycle()), 0);
         }
 
         hunger -= hungerDecrementRate * Time.deltaTime;
