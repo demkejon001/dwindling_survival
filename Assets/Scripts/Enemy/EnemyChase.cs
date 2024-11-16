@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -9,38 +10,31 @@ public class EnemyChase : MonoBehaviour
 {
     public Transform playerTransform;
     public float speed = 10f;
-    [SerializeField]
-    private Rigidbody2D enemyRB;
-    [SerializeField]
-    private Collider2D enemyCollider;
+    [SerializeField] public Rigidbody2D enemyRB;
+    [SerializeField] private Collider2D enemyCollider;
 
-    [SerializeField]
-    public float MAX_SEE_AHEAD = 10;
+    [SerializeField] public float MAX_SEE_AHEAD = 10;
     // private Vector2 attack_vector;
 
-    [SerializeField]
-    private float windUpDistance = 0.5f;
-    [SerializeField]
-    private float launchDistance = 3.0f;
+    [SerializeField] private float windUpDistance = 0.5f;
+    [SerializeField] private float launchDistance = 3.0f;
 
     private Vector3 windUpPosition;
     private Vector3 launchPosition;
 
-    [SerializeField]
-    private float windUpDuration = 0.5f;
-    [SerializeField]
-    private float launchDuration = 0.2f;
-    [SerializeField]
-    private float attack_cooldown = 0.3f;
+    [SerializeField] private float windUpDuration = 0.5f;
+    [SerializeField] private float launchDuration = 0.2f;
+    [SerializeField] private float attack_cooldown = 0.3f;
 
-    [SerializeField]
-    private float attackDamage = 10.0f;
+    [SerializeField] private float attackDamage = 10.0f;
     private bool canDamage = false;
 
-    [SerializeField]
-    float maxEvadeDistance = 30f;
-    [SerializeField]
-    float evadeDuration = 8f;
+    [SerializeField] float maxEvadeDistance = 30f;
+    [SerializeField] float evadeDuration = 8f;
+
+    private Steering steering;
+    private Vector2 previousDirection = Vector2.zero;
+    private Vector2 currentDirection = Vector2.zero;
 
 
     // [SerializeField]
@@ -68,8 +62,7 @@ public class EnemyChase : MonoBehaviour
         None,
     }
 
-    [SerializeField]
-    private EnemyState enemyState;
+    [SerializeField] private EnemyState enemyState;
 
 
     // Start is called before the first frame update
@@ -87,6 +80,10 @@ public class EnemyChase : MonoBehaviour
         if (enemyCollider == null)
         {
             enemyCollider = GetComponent<Collider2D>();
+        }
+        if (steering == null)
+        {
+            steering = GetComponentInParent<Steering>();
         }
     }
 
@@ -119,10 +116,22 @@ public class EnemyChase : MonoBehaviour
             }
             else
             {
-                enemyRB.position = Vector2.MoveTowards(enemyRB.position, playerTransform.position, Time.deltaTime * speed);
+                // Vector2 direction = steering.GetSteeringDirection(playerTransform.position) * 4.0f;
+                // // Debug.DrawLine(enemyRB.position, enemyRB.position + direction);
+                // enemyRB.position = Vector2.MoveTowards(enemyRB.position, enemyRB.position + direction, Time.deltaTime * speed);
+                goToLocation(playerTransform.position);
             }
         }
 
+    }
+
+    void goToLocation(Vector2 location)
+    {
+        Vector2 direction = steering.GetSteeringDirection(location) * 4.0f;
+        currentDirection = Vector2.Lerp(currentDirection, direction, 1.8f * Time.deltaTime); 
+        // Debug.DrawLine(enemyRB.position, enemyRB.position + direction, Color.blue);
+        // Debug.DrawLine(enemyRB.position, enemyRB.position + currentDirection, Color.green);
+        enemyRB.position = Vector2.MoveTowards(enemyRB.position, enemyRB.position + currentDirection, Time.deltaTime * speed);
     }
 
     IEnumerator Attack()
@@ -176,7 +185,11 @@ public class EnemyChase : MonoBehaviour
         bool reachedDestination = false;
         while (elapsedTime < evadeDuration && distanceFromPlayer < maxEvadeDistance && !reachedDestination)
         {
-            enemyRB.position = Vector2.MoveTowards(enemyRB.position, fleePosition, Time.deltaTime * speed);
+            // // enemyRB.position = Vector2.MoveTowards(enemyRB.position, fleePosition, Time.deltaTime * speed);
+            // Vector2 direction = enemyRB.position + steering.GetSteeringDirection(fleePosition) * 4.0f;
+            // // Debug.DrawLine(enemyRB.position, direction);
+            // enemyRB.position = Vector2.MoveTowards(enemyRB.position, direction, Time.deltaTime * speed);
+            goToLocation(fleePosition);
             reachedDestination = Mathf.Approximately(0, (enemyRB.position - fleePosition).magnitude);
             distanceFromPlayer = (playerTransform.position - transform.position).magnitude;
             elapsedTime += Time.deltaTime;

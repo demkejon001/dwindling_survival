@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8481404593656074264}
   - component: {fileID: 6367555195605093572}
   - component: {fileID: 7231085733432265450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Real Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +134,7 @@ MonoBehaviour:
   attackDamage: 10
   maxEvadeDistance: 30
   evadeDuration: 8
+  enemyState: 0
 --- !u!50 &6367555195605093572
 Rigidbody2D:
   serializedVersion: 4
